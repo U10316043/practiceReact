@@ -1,8 +1,5 @@
 import {render} from 'react-dom'
 import App from './components/App'
-import Todos from './components/Todos'
-import Youtube from './components/Youtube'
-import Yourname from './components/Yourname'
 import Examples from './components/Examples'
 import Examples02 from './components/Examples02'
 import store from './redux/store/config'
@@ -21,9 +18,6 @@ render(
         <IndexRoute component={Examples}/>
         <Route path="ex02" component={Examples02}/>
         <Route path="ex02/:name" component={Examples02}/>
-        <Route path="todos" component={Todos}/>
-        <Route path="youtube" component={Youtube}/>
-        <Route path="yourname" component={Yourname}/>
       </Route>
     </Router>
   </Provider>,

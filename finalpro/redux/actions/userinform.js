@@ -1,1 +1,0 @@
-export const getuserinformation = () => ({ type:'STOREINFORM'});

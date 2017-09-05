@@ -15,12 +15,6 @@ export default function App({ children }) {
       </header>
       <div>
         <button onClick={() => browserHistory.push('/ex02')}>Go to /Examples02</button>
-        {' '}
-        <button onClick={() => browserHistory.push('/todos')}>Todos</button>
-        {' '}
-        <button onClick={() => browserHistory.push('/youtube')}>Youtube</button>
-        {' '}
-        <button onClick={() => browserHistory.push('/yourname')}>Yourname</button>
       </div>
       <hr/>
       <div style={{ marginTop: '1.5em' }}>{children}</div>
