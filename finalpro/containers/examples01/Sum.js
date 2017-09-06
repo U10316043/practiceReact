@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { getSum } from '../../redux/actions/index'
 import { getSub } from '../../redux/actions/index'
-import { increase } from '../../redux/actions/index'
+import { getGo } from '../../redux/actions/index'
 import React, { Component } from 'react'
 
 class Sum extends Component{
@@ -12,7 +12,7 @@ class Sum extends Component{
   render() {
     console.log('props', this.props)
     console.log('state', this.state)
-    const {state:{a1,b1,a2,b2}, props:{sum, sub, onSum, onSub, onIncrement}} = this;
+    const {state:{a1,b1,a2,b2, iPhonenum}, props:{sum, sub, onSum, onSub, onGo, aa:{isChange}}} = this;
     return (
       <div>
         <input value={a1} 
@@ -28,8 +28,12 @@ class Sum extends Component{
             onChange={(e)=>this.setState({b2: e.target.value})}/>
         = <span>{sub}</span>
         <button onClick={() => onSub(a2,b2)}> Sub</button>
-        <button onClick={onIncrement}> Increment</button>
         <p/>
+               <span>please enter your phone number</span>
+                <input value={iPhonenum} onChange={(a)=>this.setState({iPhonenum: a.target.value})}/>
+                <button onClick={()=>onGo(iPhonenum)}> go</button>
+                <span>{isChange}</span>
+                <p/>
       </div>
     )
   }
@@ -38,11 +42,12 @@ class Sum extends Component{
 export default  connect(
   (state, ownProps) => ( {
     sum: state.examplesaaa.sum.sumclone,
-    sub: state.examplesaaa.sub
+    sub: state.examplesaaa.sub,
+    aa: state.examplesaaa.goreducer
   }),
   {
     onSum: getSum,
     onSub: getSub,
-    onIncrement: increase
+    onGo: getGo
   }
 )(Sum)

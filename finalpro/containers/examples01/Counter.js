@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { decrease } from '../../redux/actions/index'
+import { increase } from '../../redux/actions/index'
 
 class CounterCCC extends Component{
   constructor(props) {
@@ -8,11 +9,12 @@ class CounterCCC extends Component{
   }
   render() {
     console.log('props', this.props)
-    const {countd:{result},onDecrement} = this.props;
+    const {countd:{result},onDecrement, onIncrement} = this.props;
     return (
       <div>
         Clicked: <span>{result}</span> times
         <button onClick={onDecrement}>Decrease</button>
+        <button onClick={onIncrement}> Increment</button>
         {/* <button onClick={onIncrement}> Increment</button> */}
         <p/>
       </div>
@@ -29,7 +31,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onDecrement: () => dispatch(decrease())
+    onDecrement: () => dispatch(decrease()),
+    onIncrement: () => dispatch(increase())
     // ,    onIncrement: () => dispatch(increase())
   }
 }

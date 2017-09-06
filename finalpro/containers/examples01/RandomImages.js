@@ -34,7 +34,8 @@ function ImageList(props) {
 
 export default connect(
   (state, ownProps) =>( {
-    images: state.examplesaaa.images
+    images: state.examplesaaa.images,
+    aa: state.examplesaaa.ic
   }),
   {onRandomImages: () => getRandomImages}
 )(RandomImages)
