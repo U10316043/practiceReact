@@ -26,12 +26,12 @@ class RevealInsert extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {    
-        reveal: state.examplesaaa.ii,
+        reveal: state.examplesaaa.revealreducer
     }
 }
 const mapDispatchToProps = (dispatch,ownProps) => {
     return {
-        onRevealName: () => dispatch(getName())
+        onRevealName: (sUsername) => dispatch(getName(sUsername))
     }
 }
 const UsernameContainer = connect(

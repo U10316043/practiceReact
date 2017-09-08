@@ -12,6 +12,8 @@ export default function App({ children }) {
         <Link to="/ex02">Examples02</Link>
         {' '}
         <Link to="/ex02/peter">Examples02 with parameter</Link>        
+        {' '}
+        <Link to="/todolist">TodoList</Link>        
       </header>
       <div>
         <button onClick={() => browserHistory.push('/ex02')}>Go to /Examples02</button>

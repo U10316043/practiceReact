@@ -9,7 +9,14 @@ export const getSub = (a2, b2) => ({ type: 'SUB', a2, b2 });
 
 export const getGo = (iPhonenum) => ({ type: 'GO',iPhonenum });
 
-export const getName = (sUsername) => ({ type: 'REVEALNAME', sUsername  });
+export const getName = (sUsername) => {
+  console.log('name', sUsername)
+  return { type: 'REVEALNAME', sUsername  }
+}
+
+
+
+// ({ type: 'REVEALNAME', sUsername  });
 
 export const getRandomImages = (dispatch, state) => {
   dispatch({ type: 'IMAGES_LOADING' });

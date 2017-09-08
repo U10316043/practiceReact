@@ -14,8 +14,8 @@ export default class Examples extends Component {
         <h1>React</h1>
         <Counterjump />
         <Sum/>
-        <RandomImages/>
         <RevealInsert/>
+        <RandomImages/>
       </div>
     )
   }
