@@ -13,7 +13,7 @@ class Todo extends Component{
     const {state:{todothing}} = this
     const onAddList = (e) => {
       e.preventDefault()
-      if(!todothing.trim()) {
+      if(!todothing.trim()) {  {/* trim() method removes whitespace from both ends of a string.  */}
         return
       }
       this.props.getAddList(todothing);

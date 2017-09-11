@@ -2,8 +2,8 @@ import React, {Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { deleteTodo } from '../redux/actions/index'
 
-const Perlist = ({id, sAdd, deleted}) =>  (
-  <li  onClick={ e => {deleteTodo(id) } }>
+const Perlist = ({id, deleteTodo, sAdd, deleted}) =>  (
+  <li  onClick={ () => deleteTodo(id) }>
     {sAdd}
   </li>
 )
@@ -13,6 +13,7 @@ Perlist.propTypes = {
   deleted: PropTypes.bool.isRequired,
   sAdd: PropTypes.string.isRequired
 }
+
 
 export default connect(
   null,  

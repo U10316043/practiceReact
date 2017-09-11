@@ -29,7 +29,11 @@ List.PropTypes = {
 
 export default connect(
   (state) => {
-    return {todothingss: state.todothingss.todosList.filter(todothing => !todothing.deleted)}
+    const { todosList } = state.todothingss;
+    return {todothingss: todosList.filter(todothing => !todothing.deleted)}
   },
   null
 )(List)
+
+
+
