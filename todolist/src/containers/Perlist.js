@@ -1,12 +1,14 @@
 import React, {Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { deleteTodo } from '../redux/actions/index'
+import { ListGroupItem } from 'react-bootstrap'
 
 const Perlist = ({id, deleteTodo, sAdd, deleted}) =>  (
-  <li  onClick={ () => deleteTodo(id) }>
+  <ListGroupItem  onClick={ () => deleteTodo(id) }>
     {sAdd}
-  </li>
+  </ListGroupItem>
 )
+
 
 Perlist.propTypes = {
   deleteTodo: PropTypes.func.isRequired,

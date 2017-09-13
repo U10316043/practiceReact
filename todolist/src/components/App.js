@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, browserHistory } from 'react-router'
 import Todo from '../containers/Todo'
 import List from '../containers/List'
+import Test from '../containers/Test'
 
 
 export default class App extends Component {
@@ -11,8 +12,9 @@ export default class App extends Component {
   render() {
     return (
       <div >
-          <h2>Welcome to React</h2>
+          <h1>Bootstrap React</h1>
           <Todo/>
+          {' '}
           <List/>
       </div>
     );

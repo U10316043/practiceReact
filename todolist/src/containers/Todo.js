@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getAddList } from '../redux/actions/index'
+import { Button,FormGroup,ControlLabel,FormControl } from 'react-bootstrap'
 
 class Todo extends Component{
   constructor(props) {
@@ -20,14 +21,19 @@ class Todo extends Component{
       this.setState({todothing:''})
     }
     return (
-        <div>
-          <form onSubmit={ onAddList }>
-            <h3>Todo:</h3>
-            <input value={todothing} onChange={(e)=>this.setState({todothing: e.target.value})}/>
-            <button type="submit">add</button>
-            <p/>
-          </form>
-        </div>
+      <div>
+        <form onSubmit={ onAddList }>
+          <FormGroup validationState='success'>
+            <ControlLabel><h3>TodoList:</h3></ControlLabel>
+            <FormControl
+              type="text"
+              value={todothing}
+              onChange={(e)=>this.setState({todothing: e.target.value})}
+            />
+          </FormGroup>  
+          <Button bsStyle="success" type="submit" block>add</Button>
+        </form>
+      </div>
     )
   }
 }

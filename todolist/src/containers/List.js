@@ -1,20 +1,21 @@
 import React, {Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import Perlist from './Perlist'
+import { ListGroup } from 'react-bootstrap'
 class List extends Component{
   constructor(props) {
     super(props)
   }
   render() {
     return (
-      <ul>
+      <ListGroup>
         {this.props.todothingss.map(todothing =>  
           <Perlist
             key={todothing.id}
             {...todothing}
           />
         )}
-      </ul>
+      </ListGroup>
     )
   }
 }
